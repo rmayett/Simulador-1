@@ -1,4 +1,3 @@
-package robin;
 import java.util.LinkedList;// lista
 import java.util.Queue;//cola 
 public class Robin {
