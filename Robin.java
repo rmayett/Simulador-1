@@ -28,7 +28,7 @@ public class Robin {
                     tamanio= tec.nextInt();
                     s.push(id,rafaga,rafaga,prioridad,tamanio);                    
                 }
-                r.robinu(s,proce);
+                r.robin(s,proce);
     			break;
     			case 2:
                 for (int i =0;i<lim;i++) {
@@ -48,47 +48,22 @@ public class Robin {
     public void robin(Cola r,int lim){ 
         int aux; 
         Proceso auxp = new Proceso();
-       // for (int i=0;i<lim;i++) {
-          //  for (int j=0;j<r.tope().getrafaga()-1;j++) {
+        r.show();
+        System.out.println("----");
         do{
             aux=r.tope().gettiempo();
-            aux=aux-4;
+            aux=aux-4;  
+                System.out.println("Nombre del Proceso: "+ r.tope().getnombre() +" id: "+ r.tope().getid() +" rafaga: "+ r.tope().getrafaga() +" tiempo restante: "+r.tope().gettiempo()+" Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");            
+            
             auxp=r.pop();
             r.push(auxp.getid(),auxp.getrafaga(),auxp.gettiempo(),auxp.getprioridad(),auxp.gettamanio());
             r.tope().settiempo(aux);
-            if (aux>0) {
-                System.out.println("Nombre del Proceso: "+ r.tope().getnombre() +" id: "+ r.tope().getid() +" rafaga: "+ r.tope().getrafaga() +" tiempo restante: "+r.tope().gettiempo()+" Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");            
-            }
             if (aux<=0) {                
                 System.out.println("Nombre del Proceso: "+ r.tope().getnombre() +" id: "+ r.tope().getid() +" rafaga: "+ r.tope().getrafaga() +" tiempo restante: 0 Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");                         
             }
             if (r.tope().gettiempo()<=0) {
                 r.pop();                
             }                
-            //}
         }while(r.tope().getsig()!=null);    
-    }
-    public void robinu(Cola r,int lim){ 
-        int aux; 
-        Proceso auxp = new Proceso();
-       // for (int i=0;i<lim;i++) {
-          //  for (int j=0;j<r.tope().getrafaga()-1;j++) {
-        do{
-            aux=r.tope().gettiempo();
-            aux=aux-4;
-            auxp=r.pop();
-            r.push(auxp.getid(),auxp.getrafaga(),auxp.gettiempo(),auxp.getprioridad(),auxp.gettamanio());
-            r.tope().settiempo(aux);
-            if (aux>0) {
-                System.out.println("Nombre del Proceso: "+ r.tope().getnombre() +" id: "+ r.tope().getid() +" rafaga: "+ r.tope().getrafaga() +" tiempo restante: "+r.tope().gettiempo()+" Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");            
-            }
-            if (aux<=0) {                
-                System.out.println("Nombre del Proceso: "+ r.tope().getnombre() +" id: "+ r.tope().getid() +" rafaga: "+ r.tope().getrafaga() +" tiempo restante: 0 Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");                         
-            }
-            if (r.tope().gettiempo()<=0) {
-                r.pop();                
-            }                
-            //}
-        }while(r.tope().getsig()!=null);    
-    }    
+    }        
 }
