@@ -45,7 +45,7 @@ public class Cola{
 	public void show(){
 		Proceso aux = this.h;
 		while(aux!=null){
-			System.out.println("Nombre del Proceso: "+ aux.getnombre() +"\tid: "+ aux.getid() +"\trafaga: "+ aux.getrafaga() +"\ttiempo restante: "+aux.gettiempo()+"\tPrioridad: "+aux.getprioridad()+"\tTamaño: "+aux.gettamanio()+"MB");
+			System.out.println("Nombre del Proceso: "+ aux.getnombre() +"\tId: "+ aux.getid() +"\tRáfaga: "+ aux.getrafaga() +"\tTiempo restante: "+aux.gettiempo()+"\tPrioridad: "+aux.getprioridad()+"\tTamaño: "+aux.gettamanio()+"MB");
 			aux=aux.getsig();
 		}
 	}

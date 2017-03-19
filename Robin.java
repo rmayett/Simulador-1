@@ -1,6 +1,9 @@
 import java.lang.Math;
 import java.util.Scanner;
 import java.util.Random;
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 public class Robin {
 	
     public static void main(String[] args) {
@@ -9,20 +12,23 @@ public class Robin {
 		int op;   
     	Scanner tec = new Scanner(System.in);
     	do{
-    		System.out.println("\tSimulador de Planificador Round Robin\nSelecciona una Opcion para continuar:\n1.-ingresar nombres de procesos\n2.-Correr simulador con numeros aleatorios\n3.-Salir");  
+    		System.out.println("\tSimulador de Planificador Round Robin\nSelecciona una Opcion para continuar:\n1.-Ingresar nombres de procesos\n2.-Correr simulador con numeros aleatorios\n3.-Generar procesos a partir de un archivo\n4.-Salir");  
     		op=tec.nextInt();
     		switch(op){
     			case 1:
     			break;
     			case 2:
-    			generaAleatorio(10);
+                    generaAleatorio(10);
     			break;
     			case 3:
+                    generaDesdeArchivo();
     			break;
-    			default:
+                case 4:
+                break;
+                default:
     			break;
     		}      
-    	}while(op!=3);
+    	}while(op!=4);
     }
 
     public void robin(){
@@ -38,9 +44,49 @@ public class Robin {
         Random rnd = new Random();
 
         for (int i = 1; i <= cantidad; i++) {
-            procesos.push(i,rnd.nextInt(20)+1,rnd.nextInt(20)+1,rnd.nextInt(20)+1,rnd.nextInt(20)+1);
+            int rafaga = rnd.nextInt(20)+1;
+
+            procesos.push(i,rafaga,rafaga,rnd.nextInt(20)+1,rnd.nextInt(20)+1);
         }
         procesos.show();
+        System.out.println("");
         return procesos;
+    }
+
+    public static Cola generaDesdeArchivo(){
+
+        String nombreDeArchivo;
+        Scanner teclado = new Scanner(System.in);
+        int rafaga, prioridad, tamanio;
+        String[] atributos; //Arreglo de cadenas, donde se almacenarán los tres datos requeridos
+
+        System.out.print("Ingresa el nombre del archivo: ");
+        String nombreDelArchivo = teclado.nextLine();
+        System.out.println(nombreDelArchivo);
+        try {
+          FileReader fr = new FileReader(nombreDelArchivo);
+          BufferedReader br = new BufferedReader(fr);
+     
+          String linea;
+          while((linea = br.readLine()) != null){
+            atributos = linea.split(" "); //Separo a la primer líneade acuerdo a los espacios que se encuentren
+
+            //Se castean las cadenas y las guardo en sus respectivas variables
+            rafaga = Integer.parseInt(atributos[0]);
+            prioridad = Integer.parseInt(atributos[1]);
+            tamanio = Integer.parseInt(atributos[2]);
+
+            System.out.println(rafaga+" "+prioridad+" "+tamanio);
+          }      
+
+     
+          fr.close();
+        }
+        catch(Exception e) {
+          System.out.println("\nError al leer "+ nombreDelArchivo + ": " + e);
+        }
+
+
+        return null;
     }
 }
