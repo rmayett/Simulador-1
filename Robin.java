@@ -55,6 +55,7 @@ public class Robin {
 
     public static Cola generaDesdeArchivo(){
 
+        Cola procesos = new Cola();
         String nombreDeArchivo;
         Scanner teclado = new Scanner(System.in);
         int rafaga, prioridad, tamanio;
@@ -63,6 +64,9 @@ public class Robin {
         System.out.print("Ingresa el nombre del archivo: ");
         String nombreDelArchivo = teclado.nextLine();
         System.out.println(nombreDelArchivo);
+
+        int i = 1; //número de procesos
+
         try {
           FileReader fr = new FileReader(nombreDelArchivo);
           BufferedReader br = new BufferedReader(fr);
@@ -76,7 +80,9 @@ public class Robin {
             prioridad = Integer.parseInt(atributos[1]);
             tamanio = Integer.parseInt(atributos[2]);
 
-            System.out.println(rafaga+" "+prioridad+" "+tamanio);
+            procesos.push(i,rafaga,rafaga,prioridad,tamanio);
+
+            i++;
           }      
 
      
@@ -85,8 +91,8 @@ public class Robin {
         catch(Exception e) {
           System.out.println("\nError al leer "+ nombreDelArchivo + ": " + e);
         }
+        procesos.show();
 
-
-        return null;
+        return procesos;
     }
 }
