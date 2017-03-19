@@ -53,8 +53,7 @@ public class Robin {
         do{
             aux=r.tope().gettiempo();
             aux=aux-4;  
-                System.out.println("Nombre del Proceso: "+ r.tope().getnombre() +" id: "+ r.tope().getid() +" rafaga: "+ r.tope().getrafaga() +" tiempo restante: "+r.tope().gettiempo()+" Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");            
-            
+            System.out.println("Nombre del Proceso: "+ r.tope().getnombre() +" id: "+ r.tope().getid() +" rafaga: "+ r.tope().getrafaga() +" tiempo restante: "+r.tope().gettiempo()+" Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");                
             auxp=r.pop();
             r.push(auxp.getid(),auxp.getrafaga(),auxp.gettiempo(),auxp.getprioridad(),auxp.gettamanio());
             r.tope().settiempo(aux);
