@@ -1,5 +1,6 @@
 import java.lang.Math;
 import java.util.Scanner;
+import java.util.Random;
 public class Robin {
 	
     public static void main(String[] args) {
@@ -14,7 +15,7 @@ public class Robin {
     			case 1:
     			break;
     			case 2:
-    			r.robin();
+    			generaAleatorio(10);
     			break;
     			case 3:
     			break;
@@ -30,4 +31,16 @@ public class Robin {
     	p.push(1,1,1,1,1);
     	p.show();
     }    
+
+    public static Cola generaAleatorio(int cantidad){
+
+        Cola procesos = new Cola();
+        Random rnd = new Random();
+
+        for (int i = 1; i <= cantidad; i++) {
+            procesos.push(i,rnd.nextInt(20)+1,rnd.nextInt(20)+1,rnd.nextInt(20)+1,rnd.nextInt(20)+1);
+        }
+        procesos.show();
+        return procesos;
+    }
 }

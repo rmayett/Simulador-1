@@ -35,6 +35,7 @@ public class Cola{
 		}
 		else{
 			System.out.println("La cola esta vacia");
+			return null;
 		}
 	}
 	public void VaciarCola(){
@@ -44,7 +45,7 @@ public class Cola{
 	public void show(){
 		Proceso aux = this.h;
 		while(aux!=null){
-			System.out.println("Nombre del Proceso: "+ aux.getnombre() +" id: "+ aux.getid() +" rafaga: "+ aux.getrafaga() +" tiempo restante: "+aux.gettiempo()+" Prioridad: "+aux.getprioridad()+" Tamaño: "+aux.gettamanio()+"MB");
+			System.out.println("Nombre del Proceso: "+ aux.getnombre() +"\tid: "+ aux.getid() +"\trafaga: "+ aux.getrafaga() +"\ttiempo restante: "+aux.gettiempo()+"\tPrioridad: "+aux.getprioridad()+"\tTamaño: "+aux.gettamanio()+"MB");
 			aux=aux.getsig();
 		}
 	}
