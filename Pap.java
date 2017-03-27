@@ -3,7 +3,7 @@ import java.lang.Math;
 import java.util.Scanner;
 public class Pap {
    
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Cola s = new Cola();           
         int lim = (int) Math.floor(Math.random()*32);
         Pap p = new Pap();
@@ -28,7 +28,7 @@ public class Pap {
     			break;
     		}      
     	}while(op!=3);
-    }
+    }*/
     public void pap(Cola r, int lim){
         int aux; 
         Proceso auxp = new Proceso();

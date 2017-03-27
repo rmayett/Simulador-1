@@ -2,7 +2,7 @@ import java.lang.Math;
 import java.util.Scanner;
 public class Robin {
     
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Robin r = new Robin();
         Cola s = new Cola();         
         int op,a;  
@@ -43,7 +43,7 @@ public class Robin {
                 break;
             }      
         }while(op!=3);
-    }
+    }*/
 
     public void robin(Cola r,int lim){ 
         int aux; 
