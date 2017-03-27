@@ -8,6 +8,7 @@ public class Robin {
 	
     public static void main(String[] args) {
     	Robin r = new Robin();
+
     	int quantum = 4;
 		int op;   
     	Scanner tec = new Scanner(System.in);
