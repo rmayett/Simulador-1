@@ -14,10 +14,10 @@ public class Pap {
         do{           
             aux=r.tope().gettiempo();
             aux=aux-1;  
-            System.out.println("Nombre del Proceso: "+ r.tope() +" id: "+ r.tope().getid() +" rafaga: "+ r.tope().getrafaga() +" tiempo restante: "+r.tope().gettiempo()+" Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");                            
+            System.out.println("Nombre del Proceso: "+ r.tope() +" Id: "+ r.tope().getid() +" Ráfaga: "+ r.tope().getrafaga() +" Tiempo restante: "+r.tope().gettiempo()+" Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");                            
             r.tope().settiempo(aux);
             if (aux<=0) {                
-                System.out.println("Nombre del Proceso: "+ r.tope() +" id: "+ r.tope().getid() +" rafaga: "+ r.tope().getrafaga() +" tiempo restante: 0 Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");                         
+                System.out.println("Nombre del Proceso: "+ r.tope() +" Id: "+ r.tope().getid() +" Ráfaga: "+ r.tope().getrafaga() +" Tiempo restante: 0 Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");                         
             }
             if (r.tope().gettiempo()<=0) {
                 r.pop();
