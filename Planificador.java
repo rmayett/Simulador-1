@@ -6,6 +6,7 @@ import java.io.FileReader;
 public class Planificador{
 	public static void main(String[] args) {
 	int opcion,a;
+
 	Scanner teclado = new Scanner(System.in); 
 	Robin r = new Robin();
 	Pap p = new Pap();
@@ -91,7 +92,7 @@ public class Planificador{
 
 				break;
 			case 3:
-				
+			
 				int lim = (int) Math.floor(Math.random()*32);
 
 				for (int i =0;i<lim;i++) {
@@ -109,6 +110,7 @@ public class Planificador{
                 	case 3: opcion = 4;
                 	break;
                 }
+
 
 
 				break;
