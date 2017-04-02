@@ -7,10 +7,7 @@ public class Cola{
 	public Cola(){
 		this.h=null;
 		this.t=null;
-
 		i=0;
-
-
 	}
 	public boolean ColaVacia(){
 		if (this.h==null&&this.t==null) {
@@ -28,15 +25,12 @@ public class Cola{
 		if (!ColaVacia()) {
 			t.setsig(aux);
 			t=aux;
-
-			this.t.setsig(null);	
-			i++;		
-
+			t.setsig(null);	
+			i++;
 		}
 		else{
 			this.h=aux;
 			this.t=aux;
-
 			i=1;
 		}
 	}
@@ -51,16 +45,12 @@ public class Cola{
 				this.t=null;							
 						}
 			this.h=this.h.getsig();	
-
 			i--;
-
 			return resp;		
 		}
 		else{
 			System.out.println("La cola esta vacia");
-
 			i=0;
-
 			return null;
 		}
 	}
@@ -71,11 +61,12 @@ public class Cola{
 
 	}
 	public void show(){
-		Proceso aux = this.h;
+		System.out.println("\t\t\t\t\t--Cola de procesos--");
+		Proceso aux = h;
 		while(aux!=null){
-
-			System.out.println("Nombre del Proceso: "+ aux.getnombre() +"\tId: "+ aux.getid() +"\tRáfaga: "+ aux.getrafaga() +"\tTiempo restante: "+aux.gettiempo()+"\tPrioridad: "+aux.getprioridad()+"\tTamaño: "+aux.gettamanio()+"MB");
+			System.out.println("Nombre del Proceso: "+ aux +"\tId: "+ aux.getid() +"\tRáfaga: "+ aux.getrafaga() +"\tTiempo restante: "+aux.gettiempo()+"\tPrioridad: "+aux.getprioridad()+"\tTamaño: "+aux.gettamanio()+"MB");
 			aux=aux.getsig();
 		}
+		System.out.println("\t\t\t\t\t\t----");
 	}
 }

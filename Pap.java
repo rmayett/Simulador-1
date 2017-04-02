@@ -16,11 +16,16 @@ public class Pap {
     			case 1:
     			break;
     			case 2:
-                 for (int i =0;i<lim;i++) {
+                 /*for (int i =0;i<lim;i++) {
                     a=(int) Math.floor(Math.random()*32);
                     s.push((int) Math.floor(Math.random()*32),a,a,(int) Math.floor(Math.random()*32),(int) Math.floor(Math.random()*32));                    
-                }
-    			p.pap(s,lim);
+                }*/
+                s.push(12,2,3,4,6);
+                s.push(1,1,1,1,1);                
+                s.push(1,2,3,10,5);
+    			p.pap(s,4);
+                System.out.println("---");
+                s.show();
     			break;
     			case 3:
     			break;
@@ -35,18 +40,17 @@ public class Pap {
     	Orden o = new Orden();
     	r=o.orden(r);
     	r.show();
-        System.out.println("----");
-        do{
+        do{           
             aux=r.tope().gettiempo();
             aux=aux-1;  
-            System.out.println("Nombre del Proceso: "+ r.tope().getnombre() +" id: "+ r.tope().getid() +" rafaga: "+ r.tope().getrafaga() +" tiempo restante: "+r.tope().gettiempo()+" Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");                
-            
+            System.out.println("Nombre del Proceso: "+ r.tope() +" id: "+ r.tope().getid() +" rafaga: "+ r.tope().getrafaga() +" tiempo restante: "+r.tope().gettiempo()+" Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");                            
             r.tope().settiempo(aux);
             if (aux<=0) {                
-                System.out.println("Nombre del Proceso: "+ r.tope().getnombre() +" id: "+ r.tope().getid() +" rafaga: "+ r.tope().getrafaga() +" tiempo restante: 0 Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");                         
+                System.out.println("Nombre del Proceso: "+ r.tope() +" id: "+ r.tope().getid() +" rafaga: "+ r.tope().getrafaga() +" tiempo restante: 0 Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");                         
             }
             if (r.tope().gettiempo()<=0) {
-                r.pop();                
+                r.pop();
+                r.show();                
             }                
         }while(r.tope().getsig()!=null);    
 

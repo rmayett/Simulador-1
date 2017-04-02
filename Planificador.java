@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.Random;
 public class Planificador{
 	public static void main(String[] args) {
+	Pap p = new Pap();
 	int opcion;
 	Scanner teclado = new Scanner(System.in); 
 	do{
@@ -45,6 +46,7 @@ public class Planificador{
 						case 1:
 						break;
 						case 2:
+						
 						break;
 						case 3:
 						break;
