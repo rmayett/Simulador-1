@@ -50,16 +50,13 @@ public class Planificador{
 			    }
 
 				switch(menuDeAlgoritmo()){
-                	case 1:
-                		r.robin(s,s.tam());
+                	case 1: r.robin(s,s.tam());
                 	break;
 
-                	case 2:
-                		p.pap(s,s.tam());
+                	case 2: p.pap(s,s.tam());
                 	break;
 
-                	case 3:
-                		opcion = 4;
+                	case 3: opcion = 4;
                 	break;
                 }
 
@@ -82,16 +79,13 @@ public class Planificador{
                     s.push(j+1,rafaga,rafaga,prioridad,tamanio);                    
                 }
                 switch(menuDeAlgoritmo()){
-                	case 1:
-                		r.robin(s,proce);
+                	case 1: r.robin(s,proce);
                 	break;
 
-                	case 2:
-                		p.pap(s,proce);
+                	case 2: p.pap(s,proce);
                 	break;
 
-                	case 3:
-                		opcion = 4;
+                	case 3: opcion = 4;
                 	break;
                 }
 
@@ -106,23 +100,24 @@ public class Planificador{
                 }
 
 				switch(menuDeAlgoritmo()){
-                	case 1:
-                		r.robin(s,s.tam());
+                	case 1: r.robin(s,s.tam());
                 	break;
 
-                	case 2:
-                		p.pap(s,s.tam());
+                	case 2: p.pap(s,s.tam());
                 	break;
 
-                	case 3:
-                		opcion = 4;
+                	case 3: opcion = 4;
                 	break;
                 }
 
 
 				break;
 			case 4:
-				break;}
+				break;
+			default:
+				System.out.println("------Esa no es una opción válida------\n");
+				break; 
+			}
 
 		}while(opcion!=4);
 	}
@@ -132,7 +127,7 @@ public class Planificador{
 		int opcion;
 		Scanner teclado = new Scanner(System.in); 
 
-   			System.out.println("\nSelecciona una opción para continuar:\n1.-Simular con Round Robin\n2.-Simular con Prioridad Apropiativo \n3.-Salir");
+   			System.out.println("\nSelecciona el algoritmo de planificación:\n1.-Simular con Round Robin\n2.-Simular con Prioridad Apropiativo \n3.-Salir");
 			opcion=teclado.nextInt();
 		return opcion;
 	}
