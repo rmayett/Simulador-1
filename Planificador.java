@@ -12,7 +12,7 @@ public class Planificador{
 	Pap p = new Pap();
     Cola s = new Cola();
 	do{
-		System.out.println("\tPlanificador de Procesos \nSelecciona una opción para continuar:\n1.-Leer desde archivo\n2.-Ingresar datos \n3.-Ejecutar con números aleatoreos \n4.-Salir");
+		System.out.println("\tPlanificador de Procesos \nSelecciona una opción para continuar:\n1.-Leer desde archivo\n2.-Ingresar datos \n3.-Ejecutar con números aleatóreos \n4.-Salir");
 		opcion=teclado.nextInt();
 		
 		switch (opcion){
@@ -67,11 +67,11 @@ public class Planificador{
 				
 				int proce;
 				Scanner tec = new Scanner(System.in);
-                System.out.println("Dame el numero de procesos que quieres crear:");
+                System.out.println("Dame el número de procesos que quieres crear:");
                 proce = tec.nextInt();
                 for (int j=0;j<proce;j++) {
-                    System.out.println("Dame los sig datos:");
-                    System.out.print("Rafaga: ");
+                    System.out.println("Dame los siguientes datos:");
+                    System.out.print("Ráfaga: ");
                     rafaga= tec.nextInt();
                     System.out.print("Prioridad: ");
                     prioridad= tec.nextInt();
