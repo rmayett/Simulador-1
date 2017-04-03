@@ -98,7 +98,7 @@ public class Planificador{
 
 				for (int i =0;i<lim;i++) {
                     a=(int) Math.floor(Math.random()*16);
-                    s.push(i+1,a,a,(int) Math.floor(Math.random()*32),(int) Math.floor(Math.random()*32));                    
+                    s.push(i+1,a+1,a+1,(int) Math.floor(Math.random()*32),(int) Math.floor(Math.random()*32));                    
                 }
 
 				switch(menuDeAlgoritmo()){

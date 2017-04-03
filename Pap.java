@@ -15,10 +15,10 @@ public class Pap {
         while(r.tope()!=null){
            aux=r.tope().gettiempo();
             aux=aux-1;  
-            System.out.println("Nombre del Proceso: "+ r.tope() +" Id: "+ r.tope().getid() +" Ráfaga: "+ r.tope().getrafaga() +" Tiempo restante: "+r.tope().gettiempo()+" Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");                            
+            System.out.println("Nombre del Proceso: "+ r.tope() +"\tId: "+ r.tope().getid() +"\tRáfaga: "+ r.tope().getrafaga() +"\tTiempo restante: "+r.tope().gettiempo()+"\tPrioridad: "+r.tope().getprioridad()+"\tTamaño: "+r.tope().gettamanio()+" MB");                            
             r.tope().settiempo(aux);
             if (aux<=0) {                
-                System.out.println("Nombre del Proceso: "+ r.tope() +" Id: "+ r.tope().getid() +" Ráfaga: "+ r.tope().getrafaga() +" Tiempo restante: 0 Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");                         
+                System.out.println("Nombre del Proceso: "+ r.tope() +"\tId: "+ r.tope().getid() +"\tRáfaga: "+ r.tope().getrafaga() +"\tTiempo restante: 0\tPrioridad: "+r.tope().getprioridad()+"\tTamaño: "+r.tope().gettamanio()+" MB");                         
             }
             if (r.tope().gettiempo()<=0) {
                 r.pop();
