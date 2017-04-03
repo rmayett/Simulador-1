@@ -61,10 +61,10 @@ public class Cola{
 
 	}
 	public void show(){
-		System.out.println("\t\t\t\t\t--Cola de procesos--");
+		System.out.println("\n\t\t\t\t\t--Cola de procesos--");
 		Proceso aux = h;
 		while(aux!=null){
-			System.out.println("Nombre del Proceso: "+ aux +"\tId: "+ aux.getid() +"\tRáfaga: "+ aux.getrafaga() +"\tTiempo restante: "+aux.gettiempo()+"\tPrioridad: "+aux.getprioridad()+"\tTamaño: "+aux.gettamanio()+"MB");
+			System.out.println("Nombre del Proceso: "+ aux +"\tId: "+ aux.getid() +"\tRáfaga: "+ aux.getrafaga() +"\tTiempo restante: "+aux.gettiempo()+"\tPrioridad: "+aux.getprioridad()+"\tTamaño: "+aux.gettamanio()+" MB");
 			aux=aux.getsig();
 		}
 		System.out.println("\t\t\t\t\t\t----");
