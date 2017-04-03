@@ -93,10 +93,11 @@ public class Planificador{
 				break;
 			case 3:
 			
-				int lim = (int) Math.floor(Math.random()*32);
+				int lim = (int) Math.floor(Math.random()*10);
+				lim++;
 
 				for (int i =0;i<lim;i++) {
-                    a=(int) Math.floor(Math.random()*32);
+                    a=(int) Math.floor(Math.random()*16);
                     s.push(i+1,a,a,(int) Math.floor(Math.random()*32),(int) Math.floor(Math.random()*32));                    
                 }
 

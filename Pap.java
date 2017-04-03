@@ -11,8 +11,9 @@ public class Pap {
     	r=o.orden(r);
         System.out.println("\nCola de procesos listos para ejecución:");
     	r.show();
-        do{           
-            aux=r.tope().gettiempo();
+
+        while(r.tope()!=null){
+           aux=r.tope().gettiempo();
             aux=aux-1;  
             System.out.println("Nombre del Proceso: "+ r.tope() +" Id: "+ r.tope().getid() +" Ráfaga: "+ r.tope().getrafaga() +" Tiempo restante: "+r.tope().gettiempo()+" Prioridad: "+r.tope().getprioridad()+" Tamaño: "+r.tope().gettamanio()+"MB");                            
             r.tope().settiempo(aux);
@@ -22,8 +23,8 @@ public class Pap {
             if (r.tope().gettiempo()<=0) {
                 r.pop();
                 r.show();                
-            }                
-        }while(r.tope().getsig()!=null);    
+            } 
+        }
 
     }
 }
