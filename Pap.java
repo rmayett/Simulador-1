@@ -15,13 +15,9 @@ public class Pap {
         Proceso auxiliar = new Proceso();
         auxiliar = r.tope();
         while(memoria>0 && auxiliar != null){
-            if ((memoria - auxiliar.gettamanio()) <= 0)
-                System.out.println("No hay espacio suficiente en la memoria");
-            else{
-                memoria -= auxiliar.gettamanio();
-                System.out.println("El "+auxiliar+" ocupó "+auxiliar.gettamanio()+" MB de memoria.\tMemoria disponible: "+memoria);
-                auxiliar = auxiliar.getsig();
-            }   
+            memoria -= auxiliar.gettamanio();
+            System.out.println("El "+auxiliar+" ocupó "+auxiliar.gettamanio()+" MB de memoria.\tMemoria disponible: "+memoria);
+            auxiliar = auxiliar.getsig(); 
         }
 
     	r.show();

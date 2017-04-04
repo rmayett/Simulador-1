@@ -6,7 +6,7 @@ import java.io.FileReader;
 public class Planificador{
 	public static void main(String[] args) {
 	int opcion,a;
-
+	int memoria = 1000;
 	Scanner teclado = new Scanner(System.in); 
 	Robin r = new Robin();
 	Pap p = new Pap();
@@ -17,7 +17,7 @@ public class Planificador{
 		
 		switch (opcion){
 			case 1:
-
+				s.VaciarCola();
 			    int rafaga, prioridad, tamanio;
 			    String[] atributos; //Arreglo de cadenas, donde se almacenarán los tres datos requeridos
 
@@ -39,9 +39,12 @@ public class Planificador{
 			        rafaga = Integer.parseInt(atributos[0]);
 			        prioridad = Integer.parseInt(atributos[1]);
 			        tamanio = Integer.parseInt(atributos[2]);
-
+			    if((memoria -= tamanio) > 0){
 			        s.push(i,rafaga,rafaga,prioridad,tamanio);
 			        i++;
+			    }
+			    else
+                    System.out.println("\nEl proceso con id "+i+" no cabe en la memoria");
 			      }      
 
 			      fr.close();
@@ -64,7 +67,7 @@ public class Planificador{
 				break;
 
 			case 2:	
-				
+				s.VaciarCola();
 				int proce;
 				Scanner tec = new Scanner(System.in);
                 System.out.println("Dame el número de procesos que quieres crear:");
@@ -77,7 +80,10 @@ public class Planificador{
                     prioridad= tec.nextInt();
                     System.out.print("Tamaño: ");
                     tamanio= tec.nextInt();
-                    s.push(j+1,rafaga,rafaga,prioridad,tamanio);                    
+                    if((memoria -= tamanio) > 0)
+                    	s.push(j+1,rafaga,rafaga,prioridad,tamanio);
+                    else
+                    	System.out.println("\nEl proceso con id "+(j+1)+" no cabe en la memoria");                 
                 }
                 switch(menuDeAlgoritmo()){
                 	case 1: r.robin(s,proce);
@@ -92,13 +98,16 @@ public class Planificador{
 
 				break;
 			case 3:
-			
+				s.VaciarCola();
 				int lim = (int) Math.floor(Math.random()*10);
 				lim++;
 
 				for (int i =0;i<lim;i++) {
                     a=(int) Math.floor(Math.random()*16);
-                    s.push(i+1,a+1,a+1,(int) Math.floor(Math.random()*32),(int) Math.floor(Math.random()*32));                    
+                    tamanio = (int) Math.floor(Math.random()*32)+1;
+
+                    if((memoria -= tamanio) > 0)
+                    	s.push(i+1,a+1,a+1,(int) Math.floor(Math.random()*32),tamanio);                    
                 }
 
 				switch(menuDeAlgoritmo()){
