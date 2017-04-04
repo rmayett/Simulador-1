@@ -1,5 +1,5 @@
 public class Proceso{
-	int id,rafaga,tiempor,prioridad,tamanio;
+	int id,rafaga,tiempor,prioridad,tamanio,tiempo_inicio,tiempo_final;
 	String nombre;
 	Proceso sig;
 	public Proceso (){
@@ -7,6 +7,8 @@ public class Proceso{
 		prioridad=0;
 		id=0;
 		tiempor=0;
+		tiempo_inicio = 0;
+		tiempo_final = 0;
 		rafaga=0;
 		sig=null;
 	}
