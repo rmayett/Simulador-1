@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class Pap {
 
     public void pap(Cola r, int lim){
-        int aux, tiempos_espera=0, tiempos_ejecucion=0; 
+        int aux; 
+        float tiempos_espera=0, tiempos_ejecucion=0; 
         int memoria = 1000;
         int tiempo = 0;
         Proceso auxp = new Proceso();

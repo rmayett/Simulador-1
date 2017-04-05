@@ -34,6 +34,22 @@ public class Cola{
 			i=1;
 		}
 	}
+
+	public void push(Proceso aux){
+
+		if (!ColaVacia()) {
+			t.setsig(aux);
+			t=aux;
+			t.setsig(null);	
+			i++;
+		}
+		else{
+			this.h=aux;
+			this.t=aux;
+			i=1;
+		}
+	}
+
 	public Proceso tope(){
 		return this.h;
 	}
